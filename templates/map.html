@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_82e62ddc5b6c010565cb13a3cb3f5676 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_82e62ddc5b6c010565cb13a3cb3f5676" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_82e62ddc5b6c010565cb13a3cb3f5676 = L.map(
+                "map_82e62ddc5b6c010565cb13a3cb3f5676",
+                {
+                    center: [30.7334421, 76.7797143],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1046ec7984dc2ced03c73ab771bd43a9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1046ec7984dc2ced03c73ab771bd43a9.addTo(map_82e62ddc5b6c010565cb13a3cb3f5676);
+        
+    
+            var marker_1a6cfc553e82c0163d4eae7bc2e4713f = L.marker(
+                [30.7334421, 76.7797143],
+                {
+}
+            ).addTo(map_82e62ddc5b6c010565cb13a3cb3f5676);
+        
+    
+            var icon_e2c6e1d64ca3cdd4b367ecc249795dcc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3bae7f30b04e5c2b14b781029dae29c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f20ad00b203e679ea7db07aff297e067 = $(`<div id="html_f20ad00b203e679ea7db07aff297e067" style="width: 100.0%; height: 100.0%;">Start: Chandigarh</div>`)[0];
+                popup_d3bae7f30b04e5c2b14b781029dae29c.setContent(html_f20ad00b203e679ea7db07aff297e067);
+            
+        
+
+        marker_1a6cfc553e82c0163d4eae7bc2e4713f.bindPopup(popup_d3bae7f30b04e5c2b14b781029dae29c)
+        ;
+
+        
+    
+    
+                marker_1a6cfc553e82c0163d4eae7bc2e4713f.setIcon(icon_e2c6e1d64ca3cdd4b367ecc249795dcc);
+            
+    
+            var marker_a11bf5e76dcb250e5997054b6bb5374d = L.marker(
+                [30.7611553, 76.8021541],
+                {
+}
+            ).addTo(map_82e62ddc5b6c010565cb13a3cb3f5676);
+        
+    
+            var icon_d03a9a7c63b9f40a34484196adac8197 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_417848ad33824aa682b7840523de2d5c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a8fc424283aa7851cb374103ad1847e2 = $(`<div id="html_a8fc424283aa7851cb374103ad1847e2" style="width: 100.0%; height: 100.0%;">End: sector 1 chandigarh</div>`)[0];
+                popup_417848ad33824aa682b7840523de2d5c.setContent(html_a8fc424283aa7851cb374103ad1847e2);
+            
+        
+
+        marker_a11bf5e76dcb250e5997054b6bb5374d.bindPopup(popup_417848ad33824aa682b7840523de2d5c)
+        ;
+
+        
+    
+    
+                marker_a11bf5e76dcb250e5997054b6bb5374d.setIcon(icon_d03a9a7c63b9f40a34484196adac8197);
+            
+    
+            var poly_line_cbb8e80c85848a93a8985b61960b9e85 = L.polyline(
+                [[30.7336776, 76.7798941], [30.7338159, 76.7802572], [30.7340777, 76.7806748], [30.7362505, 76.7841425], [30.7366553, 76.7847892], [30.7371233, 76.7855332], [30.7371521, 76.7855813], [30.7375989, 76.7862963], [30.7397253, 76.7896929], [30.7400833, 76.7902647], [30.7404846, 76.7909057], [30.740528, 76.790975], [30.740993, 76.7917202], [30.741282, 76.7921857], [30.7425183, 76.7941772], [30.7428657, 76.7947367], [30.7439773, 76.7965271], [30.7452117, 76.7984515], [30.7473941, 76.8018796], [30.7475705, 76.8019047], [30.7480415, 76.8016523], [30.7498861, 76.800127], [30.7502019, 76.8006141], [30.7504212, 76.8009524], [30.7509537, 76.801686], [30.7517036, 76.8023131], [30.7525052, 76.8034168], [30.7532876, 76.8027608], [30.7549141, 76.8014114], [30.7558576, 76.800634], [30.7558352, 76.8004507], [30.7559171, 76.8003788], [30.7560511, 76.8004336], [30.7560372, 76.8006353], [30.7574682, 76.8024252]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 6}
+            ).addTo(map_82e62ddc5b6c010565cb13a3cb3f5676);
+        
+    
+            var poly_line_9d848380d9efc449b170074ff1b318a6 = L.polyline(
+                [[30.73370528725701, 76.77993731489867], [30.733517518760763, 76.7801001412088], [30.73327839471237, 76.78007948203192], [30.73308049322364, 76.77978428384121], [30.733105529635996, 76.77954552207147], [30.733344266768064, 76.77931325885284], [30.733525377082465, 76.77932965695892], [30.733917850565238, 76.7791394338766], [30.736393570179395, 76.77702326412822], [30.736592176495176, 76.77685355877885], [30.73666478385958, 76.77679155250486], [30.73687337957571, 76.77661335621511], [30.737193478035444, 76.77633985760902], [30.738474511034667, 76.77524532591231], [30.739166490285054, 76.77455800101652], [30.73928452107936, 76.77433539428901], [30.739325286834998, 76.77394076944316], [30.739804151618113, 76.77364356931108], [30.74005583754556, 76.77372765847421], [30.740300766570133, 76.7741904840513], [30.740205452573562, 76.77456734420102], [30.74260213935578, 76.7789871920804], [30.74265210397437, 76.77906680174961], [30.743111365654137, 76.77979770445704], [30.74663323122122, 76.78504744686435], [30.74699218245114, 76.78516389088135], [30.747184153594176, 76.78558428493885], [30.74716402243868, 76.78578964256322], [30.750008070305277, 76.79083606339829], [30.750378216983503, 76.79142336834676], [30.75373573256689, 76.79672144896647], [30.75385652311616, 76.79678768172796], [30.753871281941336, 76.79696225447907], [30.755946246289906, 76.80033358901065], [30.75610012236239, 76.80039651745989], [30.756084999788943, 76.8006159580783], [30.757502111185758, 76.80238848691513]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 6}
+            ).addTo(map_82e62ddc5b6c010565cb13a3cb3f5676);
+        
+</script>
+</html>
