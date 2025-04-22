@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Route Optimizer</title>
+    <link rel="icon" href="1.png" />
+    <link
+      rel="stylesheet"
+      href="./style.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 400px;
+        width: 80%;
+        margin: 20px auto;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="1.png"
+        alt="logo"
+        id="logoicon"
+      />
+      <span id="route"><b>Route Optimizer</b></span>
+      <button id="search">Search</button>
+      <button id="login">Login</button>
+      <button id="signup">SignUp</button>
+    </header>
+
+    <div class="main">
+      <div class="container">
+        <div class="textbox">
+          <p class="text">
+            This project uses Artificial Intelligence to find the shortest and
+            second shortest routes between two places. It considers different
+            transport modes like car, bus, bike, and walking—each with different
+            speeds. The system helps users pick the fastest or next-best path
+            based on their needs. It's designed to improve delivery planning,
+            reduce travel time, and save fuel by offering smart and flexible
+            route suggestions.
+          </p>
+        </div>
+        <div class="imagebox">
+          <img
+            src="1.2.png"
+            alt="illustration"
+            class="image"
+          />
+        </div>
+      </div>
+
+      <form id="routeForm">
+        <div class="location">
+          <input type="text" id="start" placeholder="Start Location" required />
+          <input type="text" id="end" placeholder="End Location" required />
+          <input type="text" id="price" placeholder="Petrol Price" required />
+          <input type="text" id="speed" placeholder="Speed (km/hr)" required />
+          <div class="modes">
+            <label for="mode" class="mode">Choose mode of transport:</label>
+            <select name="mode" id="mode">
+              <option value="Car">Car</option>
+              <option value="Bus">Bus</option>
+              <option value="Bike">Bike</option>
+              <option value="Walking">Walking</option>
+            </select>
+          </div>
+          <button type="submit" class="submit">Submit</button>
+        </div>
+      </form>
+
+      <div
+        id="result"
+        style="display: none; text-align: center; margin-top: 20px"
+      >
+        <h3>🚀 Route Optimization Results</h3>
+        <p id="shortest-distance"></p>
+        <p id="shortest-time"></p>
+        <p id="shortest-cost"></p>
+        <br />
+        <p id="second-distance"></p>
+        <p id="second-time"></p>
+        <p id="second-cost"></p>
+      </div>
+
+      <iframe
+        id="mapFrame"
+        style="
+          display: none;
+          width: 80%;
+          height: 400px;
+          border-radius: 15px;
+          margin: 20px auto;
+        "
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <footer>
+      <p class="footer1">
+        &copy; 2025 Optimization Pvt. Ltd. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      let map;
+
+      document
+        .getElementById("routeForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const start = document.getElementById("start").value;
+          const end = document.getElementById("end").value;
+          const price = document.getElementById("price").value;
+          const mode = document.getElementById("mode").value;
+          const speed = document.getElementById("speed").value;
+
+          const response = await fetch("/optimize", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ start, end, price, mode, speed }),
+          });
+
+          const data = await response.json();
+
+          if (data.error) {
+            alert("⚠️ " + data.error);
+          } else {
+            document.getElementById("result").style.display = "block";
+
+            const s = data.shortest;
+            const ss = data.second_shortest;
+
+            document.getElementById(
+              "shortest-distance"
+            ).innerText = `📏 Distance: ${s.distance} km`;
+            document.getElementById(
+              "shortest-time"
+            ).innerText = `⏳ Time: ${s.time_hr}h ${s.time_min}m`;
+            document.getElementById(
+              "shortest-cost"
+            ).innerText = `⛽ Fuel Cost: ₹${s.cost}`;
+
+            document.getElementById(
+              "second-distance"
+            ).innerText = `📏 2nd Shortest: ${ss.distance} km`;
+            document.getElementById(
+              "second-time"
+            ).innerText = `⏳ Time: ${ss.time_hr}h ${ss.time_min}m`;
+            document.getElementById(
+              "second-cost"
+            ).innerText = `⛽ Fuel Cost: ₹${ss.cost}`;
+
+            const mapFrame = document.getElementById("mapFrame");
+            mapFrame.src = "/map";
+            mapFrame.style.display = "block";
+          }
+        });
+    </script>
+  </body>
+</html>
